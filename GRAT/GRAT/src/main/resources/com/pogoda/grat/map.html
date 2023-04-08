@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapa</title>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=your Google Maps's API key &callback=initMap"></script>
+    <style>
+        #map {
+            height: 284px;
+            width: 285px;
+            float: right;
+        }
+          .gm-style .gm-style-cc {
+            display: none;
+          }
+    </style>
+  </head>
+  <body >
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var options = {
+          center: {lat: 50.040341912270925, lng: 21.99914443307795},
+          zoom: 12,
+          styles:
+                  [
+                    {
+                      "featureType": "all",
+                      "elementType": "all",
+                      "stylers": [
+                        {
+                          "saturation": "32"
+                        },
+                        {
+                          "lightness": "-3"
+                        },
+                        {
+                          "visibility": "on"
+                        },
+                        {
+                          "weight": "1.18"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "administrative",
+                      "elementType": "labels",
+                      "stylers": [
+                        {
+                          "visibility": "on"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "landscape",
+                      "elementType": "labels",
+                      "stylers": [
+                        {
+                          "visibility": "off"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "landscape.man_made",
+                      "elementType": "all",
+                      "stylers": [
+                        {
+                          "saturation": "-70"
+                        },
+                        {
+                          "lightness": "14"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "poi",
+                      "elementType": "labels",
+                      "stylers": [
+                        {
+                          "visibility": "off"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "road",
+                      "elementType": "labels",
+                      "stylers": [
+                        {
+                          "visibility": "off"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "transit",
+                      "elementType": "labels",
+                      "stylers": [
+                        {
+                          "visibility": "off"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "water",
+                      "elementType": "all",
+                      "stylers": [
+                        {
+                          "saturation": "100"
+                        },
+                        {
+                          "lightness": "-14"
+                        }
+                      ]
+                    },
+                    {
+                      "featureType": "water",
+                      "elementType": "labels",
+                      "stylers": [
+                        {
+                          "visibility": "off"
+                        },
+                        {
+                          "lightness": "12"
+                        }
+                      ]
+                    }
+                  ],
+          streetViewControl: false,
+        }
+
+        const map = new google.maps.Map(document.getElementById('map'), options);
+
+
+        var markerImage = new google.maps.MarkerImage('images/marker_icon.png');
+        const marker = new google.maps.Marker({
+          position: {lat: 50.040341912270925, lng: 21.99914443307795},
+          map: map,
+          draggable: true,
+          title: 'City:',
+          icon: markerImage,
+          autoPan: true
+        });
+
+        google.maps.event.addListener(marker, 'mouseover', function () {
+          miasto.open(map, marker);
+        });
+
+      }
+
+    </script>
+  </body>
+</html>

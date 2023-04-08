@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mapa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <style>
+    #mapid { height: 285px; width: 285px;}
+  </style>
+</head>
+<body>
+  <div id="mapid"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var map = L.map('mapid').setView([50.040341912270925, 21.99914443307795], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+      var apiKey = 'b236dc113ff08febe21218f739cb0689';
+      var apiEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
+      var iconEndpoint = 'https://openweathermap.org/img/w/';
+      var iconSize = '@2x.png';
+
+      var marker = L.marker([50.040341912270925, 21.99914443307795],{ draggable: true }).addTo(map);
+      marker.setLatLng([51.5074, 0.1278]).update();
+      $.getJSON(apiEndpoint, {
+        lat: 50.040341912270925,
+        lon: 21.99914443307795,
+        appid: apiKey,
+        units: 'metric'
+      }).done(function(data) {
+        var weatherIcon = iconEndpoint + data.weather[0].icon + iconSize;
+        marker.bindPopup('<b>' + data.name + '</b><br>' + data.main.feels_like + '°C<br><img src="' + weatherIcon + '">').openPopup();
+      });
+    });
+  </script>
+</body>
+</html>

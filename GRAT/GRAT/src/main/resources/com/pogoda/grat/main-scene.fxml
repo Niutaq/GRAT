@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1080.0" style="-fx-background-color: black; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogoda.grat.appController">
+    <children>
+        <AnchorPane layoutY="8.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #677EC2;">
+            <children>
+            <ImageView fitHeight="597.0" fitWidth="648.0" layoutX="200.0" layoutY="100.0" opacity="0.14" pickOnBounds="true" preserveRatio="true" scaleX="1.7" scaleY="2.0">
+               <image>
+                  <Image url="@images/map.png" />
+               </image>
+            </ImageView>
+            <HBox layoutX="9.0" layoutY="220.0" opacity="0.5" prefHeight="371.0" prefWidth="1050.0" scaleX="1.1" style="-fx-background-color: #dea4#B78#CE99728657a;">
+               <effect>
+                  <SepiaTone>
+                     <input>
+                        <BoxBlur height="62.77" iterations="3" />
+                     </input></SepiaTone>
+               </effect></HBox>
+            <ImageView fitHeight="142.0" fitWidth="140.0" layoutX="55.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true" scaleX="0.6" scaleY="0.6">
+               <image>
+                  <Image url="@images/pressure_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="53.0" layoutX="10.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" rotate="13.4" x="100.0" y="50.0">
+               <image>
+                  <Image url="@images/temp_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="49.0" fitWidth="58.0" layoutX="5.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true" rotate="13.4" x="100.0" y="50.0">
+               <image>
+                  <Image url="@images/max_temp_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="49.0" fitWidth="58.0" layoutX="10.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" rotate="14.4" x="100.0" y="50.0">
+               <image>
+                  <Image url="@images/min_temp_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="66.0" layoutX="90.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true" rotate="13.4">
+               <image>
+                  <Image url="@images/humudity_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="49.0" fitWidth="47.0" layoutX="5.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" rotate="13.4" x="100.0" y="50.0">
+               <image>
+                  <Image url="@images/temp_feels_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="weather_condition" fitHeight="84.0" fitWidth="126.0" layoutX="505.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="rain" fitHeight="707.0" fitWidth="1118.0" layoutX="175.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" scaleX="1.52">
+               <image>
+                  <Image url="@images/rain.gif" />
+               </image>
+           
+                              </ImageView>
+            <ImageView fx:id="snow" fitHeight="717.0" fitWidth="1080.0" layoutX="-1.0" layoutY="-9.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" scaleX="2.0" scaleY="2.0">
+               <image>
+                  <Image url="@images/snow.gif" />
+               </image>
+            </ImageView>
+            <Button fx:id="getData" layoutX="467.0" layoutY="138.0" mnemonicParsing="false" stylesheets="@przycisk_button.css" text="Check the weather" />
+            <ImageView fitHeight="55.0" fitWidth="39.0" layoutX="678.0" layoutY="66.0" opacity="0.2" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/search_icon.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="hist" layoutX="480.0" layoutY="179.0" mnemonicParsing="false" stylesheets="@przycisk_button.css" text="Search history" />
+              <TextField fx:id="city" layoutX="382.0" layoutY="54.0" prefHeight="63.0" prefWidth="302.0" promptText="Enter a location" style="-fx-background-color: transparent;">
+               <font>
+                  <Font name="Unispace-Bold" size="25.0" />
+               </font>
+              </TextField>
+            <HBox layoutX="530.0" layoutY="-95.0" opacity="0.25" prefHeight="325.0" prefWidth="877.0" scaleX="0.4" scaleY="0.4" style="-fx-background-color: #F4FA82;">
+               <effect>
+                  <SepiaTone level="0.0">
+                     <input>
+                        <BoxBlur height="184.3" iterations="3" width="184.29" />
+                     </input>
+                  </SepiaTone>
+               </effect>
+            </HBox>
+            <Text fx:id="no2" layoutX="820.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Segoe UI Light Italic" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="co" layoutX="890.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Segoe UI Light Italic" size="14.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="780.0" layoutY="-25.0" pickOnBounds="true" preserveRatio="true" scaleX="0.2" scaleY="0.2">
+               <image>
+                  <Image url="@images/co_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="53.0" layoutX="865.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/level_co_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="59.0" layoutX="780.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/no_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="53.0" layoutX="790.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/level_no2_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="59.0" layoutX="920.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/o3_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="53.0" layoutX="935.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/level_o3_icon.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="o3" layoutX="962.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Segoe UI Light Italic" size="14.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="99.0" fitWidth="53.0" layoutX="1005.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/level_so2_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="59.0" layoutX="990.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/so2_icon.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="so2" layoutX="1038.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Segoe UI Light Italic" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="860.0" layoutY="160.0" opacity="0.65" strokeType="OUTSIDE" strokeWidth="0.0" text="Air pollution">
+               <font>
+                  <Font name="Segoe UI Light Italic" size="20.0" />
+               </font>
+            </Text>
+            </children>
+        </AnchorPane>
+        <Text fx:id="temp" layoutX="180.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:" textAlignment="CENTER">
+            <font>
+                <Font name="Segoe UI Light Italic" size="36.0" />
+            </font>
+        </Text>
+        <Text fx:id="temp_feels" layoutX="180.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sensed temperature:">
+            <font>
+                <Font name="Segoe UI Light Italic" size="36.0" />
+            </font>
+        </Text>
+        <Text fx:id="temp_max" layoutX="180.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max. temperature:">
+            <font>
+                <Font name="Segoe UI Light Italic" size="36.0" />
+            </font>
+        </Text>
+        <Text fx:id="temp_min" fontSmoothingType="LCD" layoutX="180.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min. temperature:">
+            <font>
+                <Font name="Segoe UI Light Italic" size="36.0" />
+            </font>
+        </Text>
+        <Text fx:id="pressure" layoutX="180.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pressure:">
+            <font>
+                <Font name="Segoe UI Light Italic" size="36.0" />
+            </font>
+        </Text>
+      <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="750.0" layoutY="580.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@images/sunrise_icon.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="sunrise" layoutX="800.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="53.33334159851074">
+         <font>
+            <Font name="Roboto Bold" size="18.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="900.0" layoutY="580.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@images/sunset_icon.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="sunset" layoutX="950.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="53.33334159851074">
+         <font>
+            <Font name="Roboto" size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="time" layoutX="120.0" layoutY="70.0" text="Label">
+         <font>
+            <Font name="Segoe UI Light Italic" size="40.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor>
+      </Label>
+      <ImageView fitHeight="154.0" fitWidth="184.0" layoutX="20.0" layoutY="20.0" nodeOrientation="INHERIT" opacity="0.13" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/clock_icon.png" />
+         </image>
+      </ImageView>
+      <WebView fx:id="webview" layoutX="740.0" layoutY="270.0" prefHeight="300.0" prefWidth="300.0" />
+      <Text fx:id="humidity" layoutX="180.0" layoutY="575.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Humidity:">
+         <font>
+            <Font name="Segoe UI Light Italic" size="36.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
